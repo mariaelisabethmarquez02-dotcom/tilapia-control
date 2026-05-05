@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Bomba OFF</title></head>
+<body style="font-family: Arial; text-align:center; margin-top:50px;">
+<h1>💧 Apagando bomba...</h1>
+
+<script>
+fetch("https://tilapiashan-default-rtdb.firebaseio.com/bomba.json", {
+  method: "PUT",
+  headers: {"Content-Type": "application/json"},
+  body: "0"
+})
+.then(() => {
+  document.body.innerHTML = "<h1>🔴 Bomba apagada</h1>";
+})
+.catch(() => {
+  document.body.innerHTML = "<h1>❌ Error</h1>";
+});
+</script>
+
+</body>
+</html>
