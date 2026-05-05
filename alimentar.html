@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Alimentando...</title>
+</head>
+<body style="font-family: Arial; text-align:center; margin-top:50px;">
+
+<h1>🐟 Alimentando...</h1>
+<p>Enviando orden al sistema...</p>
+
+<script>
+fetch("https://tilapiashan-default-rtdb.firebaseio.com/alimentar.json", {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: "1"
+})
+.then(() => {
+  document.body.innerHTML = "<h1>✅ Alimentación enviada</h1>";
+})
+.catch(() => {
+  document.body.innerHTML = "<h1>❌ Error al enviar</h1>";
+});
+</script>
+
+</body>
+</html>
